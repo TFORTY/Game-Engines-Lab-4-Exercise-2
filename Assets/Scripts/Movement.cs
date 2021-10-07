@@ -52,8 +52,8 @@ public class Movement : MonoBehaviour
         {
             if (collision.contacts[0].normal.y > 0.5)
             {
-                Destroy(collision.collider.gameObject);
-            }        
+                Destroy(collision.collider.gameObject);             
+            }
         }
 
         if (collision.collider.tag == "Ground")
