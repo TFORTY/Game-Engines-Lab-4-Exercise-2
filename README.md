@@ -1,1 +1,3 @@
 Game Engines Lab 4 Exercise 2
+
+For the observer, I created an audio player script based on if my character collided with an object that had an enemy tag, I invoked an "enemyKilled" action which played a death sound effect when the enemy died. For the singleton, I used a counter variable that displayed how many enemies the player jumped on and killed. The text script that I used had an instance of the PlayerText and an Add function that just added 1 everytime the instance got called. In my player movement script, I used this singleton to update the text by checking if the player had jumped and collided with an enemy. If the player did so, I called a PlayerText Instance and used the Add function created to add 1 point which updated the corresponding text on screen. 
