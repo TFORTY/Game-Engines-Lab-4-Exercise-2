@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Movement : MonoBehaviour
 {
+    public static event Action enemyKilled;
+
     private Rigidbody rb;
     private float movespeed;
     private float dirX, dirZ;
@@ -51,8 +54,14 @@ public class Movement : MonoBehaviour
         if (collision.collider.tag == "Obstacle")
         {
             if (collision.contacts[0].normal.y > 0.5)
-            {
-                Destroy(collision.collider.gameObject);             
+            {             
+                PlayerText.Instance.Add(1);
+
+                Destroy(collision.collider.gameObject);
+
+                #region observer
+                enemyKilled?.Invoke();
+                #endregion             
             }
         }
 

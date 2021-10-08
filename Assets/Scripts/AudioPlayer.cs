@@ -13,12 +13,12 @@ public class AudioPlayer : MonoBehaviour
 
     private void OnEnable()
     {
-        Clicked.clicked += PlayAudio;
+        Movement.enemyKilled += PlayAudio;
     }
 
     private void OnDisable()
     {
-        Clicked.clicked -= PlayAudio;
+        Movement.enemyKilled -= PlayAudio;
     }
 
     private void PlayAudio()
